@@ -11,9 +11,9 @@ namespace Saturn.Controllers.Mvc
     public class HomeController : Controller
     {
         // GET: /<controller>/
-        public string  Index()
+        public ViewResult  Index()
         {
-            return "Hello from the controller";
+            return View();
         }
     }
 }

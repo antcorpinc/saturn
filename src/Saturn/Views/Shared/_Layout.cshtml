@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EDU - Plus </title>
+</head>
+<body>
+    @Html.Partial("~/Views/Shared/_TopBar.cshtml")
+    
+    <div>
+        <section>
+            @RenderBody()
+        </section>
+    </div>
+
+    @Html.Partial("~/Views/Shared/_BottomBar.cshtml")
+</body>
+</html>
