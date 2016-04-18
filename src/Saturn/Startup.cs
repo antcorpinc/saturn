@@ -7,9 +7,14 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Routing;
 using Microsoft.Extensions.DependencyInjection;
-using Saturn.ResourceAccess;
+//using Saturn.ResourceAccess;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.Extensions.Configuration;
+using Saturn.Data;
+using Microsoft.Data.Entity;
+using Saturn.Entities;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Saturn.Models;
 
 namespace Saturn
 {
@@ -23,17 +28,29 @@ namespace Saturn
         {
             var builder = new ConfigurationBuilder()
                          .SetBasePath(appEnv.ApplicationBasePath)
-                         .AddJsonFile("config.json")
+                        // .AddJsonFile("config.json")
+                        .AddJsonFile("appsettings.json")
                          .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+           
             services.AddEntityFramework()
                 .AddSqlServer()
-                .AddDbContext<EduContext>();
+              //   .AddDbContext<EduContext>(options=>options.UseSqlServer(Configuration["Data:EduContextConnection"]));
+            //   .AddDbContext<EduContext>(
+              .AddDbContext<ApplicationDbContext>(
+                options => options.UseSqlServer(Configuration["database:connection"]));
+
+            // services.AddIdentity<User, IdentityRole>()
+            //  services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>()
+            //         .AddEntityFrameworkStores<EduContext>()
+               .AddEntityFrameworkStores<ApplicationDbContext>()
+                     .AddDefaultTokenProviders();
+            services.AddMvc();
 
         }
         // This method gets called by the runtime. 
@@ -41,8 +58,7 @@ namespace Saturn
         public void Configure(IApplicationBuilder app,
             IHostingEnvironment environment
           )
-        {
-         
+        {        
 
             app.UseIISPlatformHandler();
             if (environment.IsDevelopment())
@@ -52,6 +68,7 @@ namespace Saturn
             app.UseRuntimeInfoPage();
 
             app.UseFileServer();
+            app.UseIdentity();
 
             app.UseMvc(ConfigureRoutes);
 
