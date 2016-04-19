@@ -14,7 +14,6 @@ using Saturn.Data;
 using Microsoft.Data.Entity;
 using Saturn.Entities;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Saturn.Models;
 
 namespace Saturn
 {
