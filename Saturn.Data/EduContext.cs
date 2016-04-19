@@ -28,8 +28,8 @@ namespace Saturn.Data
             // builder.HasDefaultSchema("Identity");
            
             base.OnModelCreating(builder);
-            // TO change the name of the default Identity AspNetUsers table to the Account Table 
-            builder.Entity<User>().ToTable("Account").HasKey(e => e.Id);
+            // TO change the name of the default Identity AspNetUsers table to the User Table 
+            builder.Entity<User>().ToTable("User").HasKey(e => e.Id);
             
         }
     }
