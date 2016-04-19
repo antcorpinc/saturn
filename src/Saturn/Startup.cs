@@ -7,7 +7,6 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Routing;
 using Microsoft.Extensions.DependencyInjection;
-//using Saturn.ResourceAccess;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.Extensions.Configuration;
 using Saturn.Data;
@@ -38,19 +37,14 @@ namespace Saturn
            
             services.AddEntityFramework()
                 .AddSqlServer()
-              //   .AddDbContext<EduContext>(options=>options.UseSqlServer(Configuration["Data:EduContextConnection"]));
                .AddDbContext<EduContext>(
-            //  .AddDbContext<ApplicationDbContext>(
+         
                 options => options.UseSqlServer(Configuration["database:connection"]));
-
-            // services.AddIdentity<User, IdentityRole>()
-            //  services.AddIdentity<ApplicationUser, IdentityRole>()
+           
             services.AddIdentity<User, IdentityRole>()
                      .AddEntityFrameworkStores<EduContext>()
-            //   .AddEntityFrameworkStores<ApplicationDbContext>()
-                     .AddDefaultTokenProviders();
+                                .AddDefaultTokenProviders();
             services.AddMvc();
-
         }
         // This method gets called by the runtime. 
         //Use this method to configure the HTTP request pipeline.
