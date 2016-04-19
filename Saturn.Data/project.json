@@ -18,7 +18,9 @@
     }
   },
   "dependencies": {
-    "Saturn.Entities": "1.0.0-*"
+    "Saturn.Entities": "1.0.0-*",
+    "Microsoft.AspNet.Identity": "3.0.0-rc1-final",
+    "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final"
   },
   "commands": {
     

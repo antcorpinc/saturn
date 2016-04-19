@@ -40,15 +40,15 @@ namespace Saturn
             services.AddEntityFramework()
                 .AddSqlServer()
               //   .AddDbContext<EduContext>(options=>options.UseSqlServer(Configuration["Data:EduContextConnection"]));
-            //   .AddDbContext<EduContext>(
-              .AddDbContext<ApplicationDbContext>(
+               .AddDbContext<EduContext>(
+            //  .AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(Configuration["database:connection"]));
 
             // services.AddIdentity<User, IdentityRole>()
             //  services.AddIdentity<ApplicationUser, IdentityRole>()
             services.AddIdentity<User, IdentityRole>()
-            //         .AddEntityFrameworkStores<EduContext>()
-               .AddEntityFrameworkStores<ApplicationDbContext>()
+                     .AddEntityFrameworkStores<EduContext>()
+            //   .AddEntityFrameworkStores<ApplicationDbContext>()
                      .AddDefaultTokenProviders();
             services.AddMvc();
 
