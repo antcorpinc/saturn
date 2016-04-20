@@ -1,5 +1,0 @@
-﻿{
-  "Data": {
-    "EduContextConnection": "Data Source=.\\sqlexpress;Initial Catalog=Edu-Dev;Integrated Security=True"
-  }
- }

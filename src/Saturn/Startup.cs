@@ -26,8 +26,7 @@ namespace Saturn
         {
             var builder = new ConfigurationBuilder()
                          .SetBasePath(appEnv.ApplicationBasePath)
-                        // .AddJsonFile("config.json")
-                        .AddJsonFile("appsettings.json")
+                         .AddJsonFile("appsettings.json")
                          .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
