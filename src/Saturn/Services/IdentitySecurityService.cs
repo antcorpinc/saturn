@@ -1,4 +1,6 @@
-﻿using Saturn.Contracts;
+﻿using Microsoft.AspNet.Identity;
+using Saturn.Contracts;
+using Saturn.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,24 +10,42 @@ namespace Saturn.Services
 {
     public class IdentitySecurityService : ISecurityAdapter
     {
+        private SignInManager<User> _signInManager;
+        private UserManager<User> _userManager;
+
+        public IdentitySecurityService(UserManager<User> userManager,
+            SignInManager<User> signInManager)
+        {
+            _signInManager = signInManager;
+            _userManager = userManager;
+        }
+
         public bool ChangePassword(string loginEmail, string oldPassword, string newPassword)
         {
             throw new NotImplementedException();
         }
 
-        public bool Login(string loginEmail, string password, bool rememberMe)
+        public async Task<bool> LoginAsync(string loginEmail, string password, bool rememberMe)
         {
-            throw new NotImplementedException();
-        }
+            var signInResult= await  _signInManager.PasswordSignInAsync(loginEmail, password, rememberMe, false);
 
-        public void Register(string loginEmail, string password, object propertyValues)
+            return signInResult.Succeeded;
+        }        
+
+        public async Task<bool> RegisterAsync(User user,string password)
         {
-            throw new NotImplementedException();
+            var result = await _userManager.CreateAsync(user, password);
+            return result.Succeeded;
         }
 
         public bool UserExists(string loginEmail)
         {
             throw new NotImplementedException();
+        }
+
+        public async void LogoutAsync()
+        {
+            await _signInManager.SignOutAsync();
         }
     }
 }
