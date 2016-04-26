@@ -34,6 +34,7 @@ namespace Saturn.Services
 
         public async Task<bool> RegisterAsync(User user,string password)
         {
+            
             var result = await _userManager.CreateAsync(user, password);
             return result.Succeeded;
         }

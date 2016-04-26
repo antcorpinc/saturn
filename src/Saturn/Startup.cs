@@ -13,6 +13,8 @@ using Saturn.Data;
 using Microsoft.Data.Entity;
 using Saturn.Entities;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Saturn.Contracts;
+using Saturn.Services;
 
 namespace Saturn
 {
@@ -44,6 +46,8 @@ namespace Saturn
                      .AddEntityFrameworkStores<EduContext>()
                                 .AddDefaultTokenProviders();
             services.AddMvc();
+
+            services.AddScoped<ISecurityAdapter, IdentitySecurityService>();
         }
         // This method gets called by the runtime. 
         //Use this method to configure the HTTP request pipeline.

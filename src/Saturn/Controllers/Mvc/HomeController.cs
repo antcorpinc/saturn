@@ -10,9 +10,7 @@ using Microsoft.AspNet.Mvc;
 namespace Saturn.Controllers.Mvc
 {
     public class HomeController : Controller
-    {
-        
-        
+    {   
         // GET: /<controller>/
         public ViewResult  Index()
         {
