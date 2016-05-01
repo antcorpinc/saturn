@@ -7,7 +7,12 @@
     "systemjs": "0.19.27"
   },
   "devDependencies": {
+    "del": "2.2.0",
+    "event-stream": "3.3.2",
     "gulp": "3.9.1",
+    "gulp-inline-ng2-template": "1.1.4",
+    "gulp-sourcemaps": "~2.0.0-alpha",
+    "gulp-typescript": "2.13.0",
     "gulp-concat": "2.6.0",
     "gulp-cssmin": "0.1.7",
     "gulp-uglify": "1.5.3",
