@@ -4,11 +4,9 @@
   "private": true,
 
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "lite": "lite-server",
+    "tsc": "tsc -p . -w",
+    "start": "gulp build-dev && nodemon --ignore htm,html --ext cs,js --exec \"dnx web\" -V",   
     "postinstall": "typings install",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
     "typings": "typings"
   },
   "license": "ISC",

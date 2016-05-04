@@ -31,7 +31,8 @@
 
   "exclude": [
     "wwwroot",
-    "node_modules"
+    "node_modules",
+    "wwwroot/node_modules"
   ],
   "publishExclude": [
     "**.user",
