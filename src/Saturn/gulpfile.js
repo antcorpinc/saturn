@@ -19,9 +19,12 @@ var config = {
     lib: [
         
         require.resolve('systemjs/dist/system.src.js'),
+        //ToOD :This needs to be changed to use the latest angular 2 RC instead of the beloe beta
         require.resolve('angular2/bundles/angular2.dev.js'),
         require.resolve('angular2/bundles/router.dev.js'),
-        require.resolve('angular2/bundles/http.dev.js')        
+        require.resolve('angular2/bundles/http.dev.js')
+
+        //ToOD :This needs to be changed to use the latest angular 2 RC instead of the beloe beta
     ]
 };
 
