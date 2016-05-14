@@ -19,12 +19,33 @@ var config = {
     lib: [
         
         require.resolve('systemjs/dist/system.src.js'),
+        require.resolve('rxjs/Rx.js'),
         //ToOD :This needs to be changed to use the latest angular 2 RC instead of the beloe beta
-        require.resolve('angular2/bundles/angular2.dev.js'),
-        require.resolve('angular2/bundles/router.dev.js'),
-        require.resolve('angular2/bundles/http.dev.js')
+  //      require.resolve('angular2/bundles/angular2.dev.js'),
+   //     require.resolve('angular2/bundles/router.dev.js'),
+   //     require.resolve('angular2/bundles/http.dev.js'),
 
         //ToOD :This needs to be changed to use the latest angular 2 RC instead of the beloe beta
+        
+        // Polyfill Libraries
+        require.resolve('es6-shim/es6-shim.min.js'),
+        require.resolve('es6-shim/es6-shim.map'),
+        require.resolve('zone.js/dist/zone.js'),
+        require.resolve('reflect-metadata/Reflect.js'),
+        require.resolve('reflect-metadata/Reflect.js.map'),
+        
+        
+        
+        //Angular 2 files
+        require.resolve('@angular/common/index.js'),
+        require.resolve('@angular/compiler/index.js'),
+        require.resolve('@angular/core/index.js'),
+        require.resolve('@angular/http/index.js'),
+        require.resolve('@angular/platform-browser/index.js'),
+        require.resolve('@angular/platform-browser-dynamic/index.js'),
+        require.resolve('@angular/router/index.js')
+        
+        
     ]
 };
 

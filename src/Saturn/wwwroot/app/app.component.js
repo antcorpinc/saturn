@@ -22,7 +22,10 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 function AppComponent() {
                 }
                 AppComponent = __decorate([
-                    core_1.Component({}), 
+                    core_1.Component({
+                        template: "\n    <div >\n      .....\n    </div>\n  ",
+                        directives: []
+                    }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
