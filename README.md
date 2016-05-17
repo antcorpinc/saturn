@@ -6,8 +6,11 @@ This has to be done after all the Pre-Requisites have been completed
 This lists steps for asp.net core - Release Candidate 1 and angular 2 -beta  using the Visual Studio Editor
  Go to the cmd prompt where the project.json is 
  Execute the following commands
+ 
  dnu restore
+ 
  npm install 
+ 
  gulp build.lib
  
  Note: When developing open a command prompt (where the project.json is) and execute the following task
