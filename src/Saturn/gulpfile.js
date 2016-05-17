@@ -49,9 +49,11 @@ var config = {
     ]
 };
 
-
+// ToDO: Need to refactor this build.lib to have only the files that are required .
 gulp.task('build.lib', function () {
-    return gulp.src(config.lib, { base: config.libBase })
+ //   return gulp.src(config.lib, { base: config.libBase })
+//  return gulp.src('./node_modules/**/*.js', { base: config.libBase })
+  return gulp.src(['./node_modules/**/*.js','./node_modules/**/*.map','./node_modules/**/*.css'], { base: config.libBase })
         .pipe(gulp.dest(webroot + 'lib'));
 });
 
