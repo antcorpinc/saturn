@@ -2,7 +2,7 @@
   "version": "1.0.0-*",
   "authors": ["Roni","Hakim","Nilesh"],
   "compilationOptions": {
-    "emitEntryPoint": true
+    "emitEntryPoint": true    
   },
 
   "dependencies": {
@@ -31,8 +31,7 @@
 
   "exclude": [
     "wwwroot",
-    "node_modules",
-    "wwwroot/node_modules"
+    "node_modules"    
   ],
   "publishExclude": [
     "**.user",
