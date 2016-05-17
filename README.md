@@ -14,7 +14,9 @@ This lists steps for asp.net core - Release Candidate 1 and angular 2 -beta  usi
  gulp build.lib
  
  Note: When developing open a command prompt (where the project.json is) and execute the following task
+ 
  npm run tsc
+ 
  This task will look for changes in the .ts file and create/modify the associated .js file
  
  A separate set of instructions will be provides for Asp.net core Release Candidate 2
