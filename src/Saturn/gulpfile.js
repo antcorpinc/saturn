@@ -53,7 +53,19 @@ var config = {
 gulp.task('build.lib', function () {
  //   return gulp.src(config.lib, { base: config.libBase })
 //  return gulp.src('./node_modules/**/*.js', { base: config.libBase })
-  return gulp.src(['./node_modules/**/*.js','./node_modules/**/*.map','./node_modules/**/*.css'], { base: config.libBase })
+//  return gulp.src(['./node_modules/**/*.js','./node_modules/**/*.map','./node_modules/**/*.css'], { base: config.libBase })
+// Get only those modules that are defined as dependencies in the package.json instead of all node_modules
+//TODO: Can be refactored further to get only the files needed -- may be dist folder 
+return gulp.src([
+    './node_modules/@angular/**/*.js*','./node_modules/@angular/**/*.map',
+    './node_modules/systemjs/**/*.js','./node_modules/systemjs/**/*.map',
+    './node_modules/es6-shim/**/*.js','./node_modules/es6-shim/**/*.map',
+    './node_modules/reflect-metadata/**/*.js','./node_modules/reflect-metadata/**/*.map',
+    './node_modules/rxjs/**/*.js','./node_modules/rxjs/**/*.map',
+    './node_modules/zone.js/**/*.js','./node_modules/zone.js/**/*.map',
+    './node_modules/bootstrap/**/*.js','./node_modules/bootstrap/**/*.map',
+    './node_modules/bootstrap/**/*.css'],
+     { base: config.libBase })
         .pipe(gulp.dest(webroot + 'lib'));
 });
 
