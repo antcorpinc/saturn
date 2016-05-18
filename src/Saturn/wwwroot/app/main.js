@@ -14,7 +14,9 @@ System.register(['@angular/platform-browser-dynamic', '@angular/http', './app.co
                 app_component_1 = app_component_1_1;
             }],
         execute: function() {
-            platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [http_1.HTTP_PROVIDERS]);
+            platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [http_1.HTTP_PROVIDERS])
+                .then(function (success) { return console.log('Main app bootstrapped'); })
+                .catch(function (error) { return console.log(error); });
         }
     }
 });

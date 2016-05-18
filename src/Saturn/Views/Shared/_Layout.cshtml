@@ -12,7 +12,7 @@
          
     </environment>
     
-     <!-- Polyfill(s) for older browsers -->
+     <!-- Polyfill(s) for older browsers  Can use either ./ or ~/ since in both cases the current directory is wwwroot-->
     <script src="~/lib/es6-shim/es6-shim.min.js"></script>
     <script src="~/lib/zone.js/dist/zone.js"></script>
    <script src="~/lib/reflect-metadata/Reflect.js"></script>     
@@ -33,5 +33,9 @@
     </div>
 
     @Html.Partial("~/Views/Shared/_BottomBar.cshtml")
+    
+    <script type="text/javascript">
+            @RenderSection("footerScript", required: false)
+    </script>
 </body>
 </html>

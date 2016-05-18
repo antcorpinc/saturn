@@ -34,6 +34,13 @@ namespace Saturn.Controllers.Mvc
             return View();
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult RegisterTest()
+        {
+            return View();
+        }
+
         [HttpPost]
         [AllowAnonymous]// ToDO: May be change this - since only valid users can register other users
         [ValidateAntiForgeryToken]
