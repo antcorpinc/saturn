@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/http', '@angular/router'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,41 +10,27 @@ System.register(['@angular/core', '@angular/http', '@angular/router'], function(
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, router_1;
-    var RegisterComponent;
+    var core_1;
+    var RegisterStep1Component;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (http_1_1) {
-                http_1 = http_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             }],
         execute: function() {
-            RegisterComponent = (function () {
-                function RegisterComponent() {
+            RegisterStep1Component = (function () {
+                function RegisterStep1Component() {
                 }
-                RegisterComponent.prototype.ngOnInit = function () {
-                };
-                RegisterComponent = __decorate([
+                RegisterStep1Component = __decorate([
                     core_1.Component({
-                        selector: 'register-app',
-                        template: "\n   <div>\n   This is testing\n     \n</div>\n  ",
-                        directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [
-                            http_1.HTTP_PROVIDERS,
-                            router_1.ROUTER_PROVIDERS
-                        ]
+                        templateUrl: './registerstep1.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], RegisterComponent);
-                return RegisterComponent;
+                ], RegisterStep1Component);
+                return RegisterStep1Component;
             }());
-            exports_1("RegisterComponent", RegisterComponent);
+            exports_1("RegisterStep1Component", RegisterStep1Component);
         }
     }
 });
-//# sourceMappingURL=accountregister.component.js.map
+//# sourceMappingURL=registerstep1.component.js.map
