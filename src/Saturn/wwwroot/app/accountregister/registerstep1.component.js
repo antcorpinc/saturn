@@ -21,9 +21,12 @@ System.register(['@angular/core'], function(exports_1, context_1) {
             RegisterStep1Component = (function () {
                 function RegisterStep1Component() {
                 }
+                RegisterStep1Component.prototype.ngOnInit = function () {
+                    console.log('Inside Step1');
+                };
                 RegisterStep1Component = __decorate([
                     core_1.Component({
-                        templateUrl: './registerstep1.html'
+                        templateUrl: 'app/accountregister/registerstep1.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], RegisterStep1Component);

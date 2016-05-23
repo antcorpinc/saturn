@@ -1,7 +1,7 @@
 import {Component,OnInit}  from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {ROUTER_PROVIDERS,ROUTER_DIRECTIVES,Router
- // ,Routes
+  ,Routes
  } from '@angular/router'
 
 import {RegisterStep1Component} from './registerstep1.component'
@@ -11,6 +11,7 @@ import {RegisterStep1Component} from './registerstep1.component'
   template: `
    <div>
    This is testing
+      <router-outlet></router-outlet>
      
 </div>
   `,
@@ -21,16 +22,22 @@ import {RegisterStep1Component} from './registerstep1.component'
   ]
 })
 
-/*@Routes([
+@Routes([
  
-  //  { path: '/account/registertest/registerstep1', component: RegisterStep1Component },
-])*/
+     { path: '/RegisterComponent/registerstep1', component: RegisterStep1Component },
+    { path: '/Account', component: RegisterStep1Component },
+    { path: '/Account/RegisterComponent', component: RegisterStep1Component },
+      { path: '/Account/RegisterComponent/registerstep1', component: RegisterStep1Component },
+      
+ { path: '/account/registertest', component: RegisterStep1Component },
+])
 
 export class RegisterComponent implements OnInit{
   
-  constructor() {}
+  constructor(private router:Router) {}
 
   ngOnInit() {
+      this.router.navigateByUrl('/account/registertest');
   }
     
 }

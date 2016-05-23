@@ -35,6 +35,7 @@ namespace Saturn.Controllers.Mvc
         }
 
         [HttpGet]
+        [Route("account/registertest")]
         [AllowAnonymous]
         public IActionResult RegisterTest()
         {
